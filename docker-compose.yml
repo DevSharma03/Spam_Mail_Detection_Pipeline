@@ -1,0 +1,12 @@
+services:
+  web:
+    build: ./app
+    container_name: email_spam_prediction_app
+    volumes:
+      - ./app/input:/app/input
+      - ./app/output:/app/output
+    ports:
+      - "9000:9000"
+    env_file:
+      - .env
+    restart: always
